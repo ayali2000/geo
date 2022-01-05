@@ -1,0 +1,54 @@
+{% extends 'partials/base.html' %}
+{% load widget_tweaks %}
+{%block content%}
+<br>
+<br>
+<div class='container'>
+    <div class="card ">
+        <h5 class="card-header">Create a poll</h5>
+        <div class="card-body">
+            <form method='POST'>
+                {% csrf_token %}
+                <div row='row'>
+                    <div class='col'>
+                        <div class='form-group'>
+                            <label for='Question'>Enter Poll Question</label>
+                            {% render_field form.Question class='form-control' rows='3'%}
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col'>
+                            <div class='form-group'>
+                                <label for='Name_1'>Enter Name</label>
+                                {% render_field form.Name_1 class='form-control'%}
+                            </div>
+                        </div>
+                        <div class='col'>
+                            <div class='form-group'>
+                                <label for='Name_2'>Enter Name</label>
+                                {% render_field form.Name_2 class='form-control'%}
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col'>
+                            <div class='form-group'>
+                                <label for='image_1'>Choose candidates picture</label>
+                                {% render_field form.image_1 class='form-control'%}
+                            </div>
+                        </div>
+                        <div class='col'>
+                            <div class='form-group'>
+                                <label for='image_2'>Choose candidates picture</label>
+                                {% render_field form.image_2 class='form-control'%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <input class='btn btn-success btn-block' type='submit' value='Submit'>
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}

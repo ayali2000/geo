@@ -1,0 +1,74 @@
+
+{% extends 'partials/base.html' %}
+{% load widget_tweaks %}
+{%block content%}
+<h3> </h3>
+<div class='container'>
+  <div class="card shadow">
+    <h5 class="card-header">Poll Results</h5>
+    <div class="card-body ">
+        <div class="row">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                    <center>
+                        <h5 class="card-title">{{result.Name_1}}</h5>
+                        <img src={{result.image_1.url}} height='100' width='100'>
+                        <hr>
+                        <p>Votes: {{result.count_1}}</p>
+                    </center>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                    <center>
+                        <h5 class="card-title">{{result.Name_2}}</h5>
+                        <img src={{result.image_2.url}} height='100' width='100'>
+                        <hr>
+                        <p>Votes: {{result.count_2}}</p>
+                    </center>
+                </div>
+              </div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="col">
+        <div class="card shadow">
+          <div class="card-body">
+              <center>
+                  <h5 class="card-title">Total Votes: {{result.total}}</h5>
+              </center>
+          </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col ">
+    <div class="card shadow">
+      <div class="card-body">
+          <center>
+              <h5 class="card-title">Declaration text</h5>
+              <p class="card-text">Some text by the EC to go here...<strong>{{result.winner}}</strong> as the winner of this election</p>
+          </center>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col ">
+    <div class="card shadow">
+      <div class="card-body">
+          <center>
+              <h5 class="card-title">Congratulation text</h5>
+              <p class="card-text">Some text by the EC go here..<strong>{{result.winner}}</strong> as the winner of this election</p>
+          </center>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

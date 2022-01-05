@@ -1,0 +1,27 @@
+{%extends 'partials/base.html'%}
+
+{%block content%}
+<br>
+<br>
+<br>
+    <div class='container '>
+        <div class="card ">
+            <h5 class="card-header mt-10">Featured</h5>
+            {%for Poll in polls%}
+                <div class='card'>
+                    <div class='row '>
+                        <div class='col col-7 col-lg-10 col-md-8'>{{Poll.Question}}
+                        </div>
+                        <div class='col'>
+                            <a class='btn btn bg-light' href="{%url 'vote' Poll.pk%}">vote</a>
+                        </div>
+                        <div class='col'>
+                            <a class='btn btn bg-light' href="{%url 'results' Poll.pk%}">Results</a>
+                        </div>
+                    </div> 
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+    
+{% endblock %}
