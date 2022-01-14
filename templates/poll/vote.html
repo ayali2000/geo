@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <center>
                             <h5 class="card-title">{{votes.Name_1}}</h5>
-                            <img src={{votes.image_1.url}} height='100vh' width='100vw'>
+                            <img src={{votes.image_1.url}} height='100vh' width='100vw' id='fit' alt='image_1'>
                             <hr>
                             <p>Vote here: {{result.count_2}}</p>
                             <div class="form-check form-check-inline">
@@ -30,7 +30,7 @@
                         <div class="card-body">
                             <center>
                                 <h5 class="card-title">{{votes.Name_2}}</h5>
-                                <img src={{votes.image_2.url}} height='100vh' width='100vw'>
+                                <img src={{votes.image_2.url}} height='100vh' width='100vw' alt='image_2'>
                                 <hr>
                                 <p>Vote here: {{result.count_2}}</p>
                                 <div class="form-check form-check-inline">
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <center>
-             <input class='btn btn-success' type='submit' value='Submit'>
+             <input class='btn btn-success mt-5' type='submit' value='Submit'>
             </center>
         </div>
       

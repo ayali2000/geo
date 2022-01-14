@@ -25,20 +25,26 @@ def create(requst):
 
 def vote(request,pk):
     votes=Poll.objects.get(pk=pk)
-    context={'votes':votes}
+    vote=Vote()  
+    context={'votes':votes,
+             "vote":vote}
     if request.method== 'POST':
+        vote=Vote(request.POST)
         select=request.POST['inlineRadioOptions']
-        if select == 'option1':
-            votes.count_1 += int(1)
-        elif select=='option2':
-            votes.count_2 += int(1) 
+        if select():  
+            if select=='option1':
+                votes.count_1 += int(1)
+            elif select=='option2':
+                votes.count_2 += int(1) 
+            else:
+                return HttpResponse('Invalid form')              
+            votes.save()  
+            return redirect('home')
         else:
-            return HttpResponse('Invalid form')
-                    
-        votes.save()  
-        return redirect('home')    
+            
+            Vote()   
+             
     return render(request,'poll/vote.html',context)  
-
 
 def results(request,pk):
     result=Poll.objects.get(pk=pk)
