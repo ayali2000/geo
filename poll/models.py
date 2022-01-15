@@ -1,7 +1,7 @@
 from django.db import models
 
 class Poll(models.Model):
-    poll_id=models.IntegerField(primary_key=True)
+    poll_id=models.IntegerField(primary_key=True,default=1)
     Question=models.TextField(max_length=200)
     Name_1=models.CharField(max_length=100)
     Name_2=models.CharField(max_length=100)
